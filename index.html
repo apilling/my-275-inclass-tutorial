@@ -1,6 +1,21 @@
 <html>
     <head>
         <title>My Website</title>
+
+        <script>
+            const addBanana = () => {
+                let counter = document.querySelector(".banana-counter").innerText;
+                counter = parseInt(counter, 10);
+                console.log(counter);
+                document.querySelector(".banana-counter").innerText = counter + 1;
+                document.querySelector(".banana-entry").value = counter + 1;
+            }
+
+            function updateBanana() {
+                const currentCounter = document.querySelector(".banana-entry").value;
+                document.querySelector(".banana-counter").innerText = currentCounter;
+            }
+        </script>
     </head>
     <body>
         <div>
@@ -9,6 +24,18 @@
 
         <div>
             <a href="banana.html">be a banana</a>
+        </div>
+
+        <div>
+            Bananas: <span class="banana-counter">0</span>
+        </div>
+
+        <div>
+            <button onclick="addBanana()">Add Banana</button>
+        </div>
+
+        <div>
+            <input type="text" class="banana-entry" value="0" onchange="updateBanana()"/>
         </div>
     </body>
 </html>
